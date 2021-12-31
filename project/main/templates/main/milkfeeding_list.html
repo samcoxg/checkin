@@ -1,0 +1,10 @@
+
+
+{% block content %}
+    <h2>Feedings</h2>
+    <ul>
+        {% for feeding in object_list %}
+            <li>{{ feeding.ate_at }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
