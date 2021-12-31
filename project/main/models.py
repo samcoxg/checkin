@@ -12,11 +12,10 @@ class BaseModel(models.Model):
 
 
 class MilkFeeding(BaseModel):
-    #ate_at = models.DateTimeField(null=False, blank=False)
+    ate_at = models.TimeField(null=False, blank=False)
     total_amount = models.DecimalField(null=False, blank=False, decimal_places=1, max_digits=5)
-    formula_type = models.CharField(null=False, blank=False, default='Pro Advance - Similac', max_length=300)
-    formula_percent = models.IntegerField(null=False, blank=False, help_text='Enter percentage out of 100.')
-    breast_milk_percent = models.IntegerField(null=False, blank=False, help_text='Enter percentage out of 100.', default=0)
+    formula_type = models.CharField(null=False, blank=False, default='Kirkland ProCare', max_length=300)
+    formula_percent = models.IntegerField(null=False, blank=False, help_text='Enter percentage out of 100.', default=100)
 
 
 class BM(BaseModel):

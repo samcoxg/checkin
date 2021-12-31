@@ -1,10 +1,31 @@
-
+{% extends "../base.html" %}
 
 {% block content %}
     <h2>Feedings</h2>
-    <ul>
+
+    <button class="btn btn-primary" onclick="location.href='/addmilkfeeding'">Add New</button>
+    <table class="table table-dark table-striped">
+        <tr>
+            <th></th>
+            <th>Created At</th>
+            <th>Eating Time</th>
+            <th>Total Amount</th>
+            <th>Formula Type</th>
+            <th>Formula Percent</th>
+        </tr>
         {% for feeding in object_list %}
-            <li>{{ feeding.ate_at }}</li>
+            <tr>
+                <td>
+                    <button class="btn btn-primary btn-sm">Edit</button>
+                    <a href="/deletemilkfeeding/{{ feeding.id }}" style="color:red;">Delete</a>
+
+                </td>
+                <td>{{ feeding.created_at }}</td>
+                <td>{{ feeding.ate_at }}</td>
+                <td>{{ feeding.total_amount }}</td>
+                <td>{{ feeding.formula_type }}</td>
+                <td>{{ feeding.formula_percent }}</td>
+            </tr>
         {% endfor %}
-    </ul>
+    </table>
 {% endblock %}
